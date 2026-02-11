@@ -70,11 +70,25 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: (){
-        countProvider.setCount();
-      },
-      child: Icon(Icons.add),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            FloatingActionButton(onPressed: (){
+              countProvider.decrement();
+            },
+              child: Icon(Icons.remove),
+            ),
+            FloatingActionButton(onPressed: (){
+              countProvider.increment();
+            },
+            child: Icon(Icons.add),
+            ),
+          ],
+        ),
       ),
+
     );
   }
 }
